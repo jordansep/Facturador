@@ -19,6 +19,7 @@ namespace Facturador.Models.Clases
         [Required]
         public string RazonSocial { get; private set; }
         public string Domicilio { get; private set; }
+        public List<Factura> Facturas { get; private set; }
 
 
 
