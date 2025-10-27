@@ -27,9 +27,9 @@ namespace Facturador.Models.Clases
         { 
             Items = new List<Item>();
         }
-        public void BuscarFactura() 
-        { 
-        
+        public void BuscarFactura()
+        {
+        float input =Validar.PedirFloatPositivo("Buscar Factura");
         }
 
     }

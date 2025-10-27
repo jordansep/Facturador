@@ -8,7 +8,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\Interfaces\" />
+    <Compile Remove="Models\Interfaces\**" />
+    <EmbeddedResource Remove="Models\Interfaces\**" />
+    <None Remove="Models\Interfaces\**" />
   </ItemGroup>
 
   <ItemGroup>
