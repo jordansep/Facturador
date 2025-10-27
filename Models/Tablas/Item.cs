@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Facturador.Models.Clases
 {
@@ -21,8 +18,11 @@ namespace Facturador.Models.Clases
         public float PrecioUnitario { get; set; }
         public Factura Factura { get; set; }
         public int FacturaId { get; set; }
+        // Hacer Constructor
+        public static void AñadirItem()
+        {
 
-
+        }
 
     }
 }

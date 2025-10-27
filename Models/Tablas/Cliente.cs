@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace Facturador.Models.Clases
 {
@@ -21,8 +15,32 @@ namespace Facturador.Models.Clases
         public string Domicilio { get; private set; }
         public List<Factura> Facturas { get; private set; }
 
+        public Cliente(string CuitCuil, string RazonSocial, string Domicilio)
+        {
+            this.CuitCuil = CuitCuil;
+            this.RazonSocial = RazonSocial;
+            this.Domicilio = Domicilio;
+            Facturas = new List<Factura>();
+        }
+        public void BuscarCliente()
+        {
 
+        }
+        public void RegistrarCliente()
+        {
 
+        }
+        public void BorrarCliente() 
+        { 
 
+        }
+        public void MostrarListaDeClientes() 
+        {
+
+        }
+        public void ModificarCliente()
+        {
+
+        }
     }
 }
