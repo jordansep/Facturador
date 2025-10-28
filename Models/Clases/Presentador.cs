@@ -12,7 +12,7 @@ namespace Facturador.Models.Menus
 
         public static void WriteLine(string mensaje)
         {
-            throw new NotImplementedException();
+            Console.WriteLine(mensaje);
         }
 
         public static void menu()
