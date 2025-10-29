@@ -1,5 +1,4 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Facturador.Models.Clases
@@ -17,20 +16,15 @@ namespace Facturador.Models.Clases
         public DateTime Fecha { get; set; }
         [Required]
         public float ImporteTotal { get; set; }
-          
+
         public Cliente Cliente { get; set; }
         public int ClienteId { get; set; }
         public List<Item> Items { get; set; }
 
-        // Hacer Constructor
-        public void RegistrarFactura() 
-        { 
+        // Constructor para inicializar la lista de Items
+        public Factura()
+        {
             Items = new List<Item>();
         }
-        public void BuscarFactura()
-        {
-        float input =Validar.PedirFloatPositivo("Buscar Factura");
-        }
-
     }
 }

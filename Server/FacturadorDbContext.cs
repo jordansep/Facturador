@@ -7,9 +7,9 @@ namespace Facturador.Server
 {
     public class FacturadorDbContext : DbContext
     {
-        DbSet<Cliente> Clientes { get; set; }
-        DbSet<Factura> Facturas { get; set; }
-        DbSet<Item> Items { get; set; }
+        public DbSet<Cliente> Clientes { get; set; }
+        public DbSet<Factura> Facturas { get; set; }
+        public DbSet<Item> Items { get; set; }
         public FacturadorDbContext() { 
             
         }
@@ -17,17 +17,16 @@ namespace Facturador.Server
         {
             if (!optionsBuilder.IsConfigured)
             {
-                // Agrega el using necesario para SetBasePath
                 IConfigurationRoot configuration = new ConfigurationBuilder()
                    .SetBasePath(Directory.GetCurrentDirectory())
                    .AddJsonFile("appsettings.json")
                    .Build();
 
-                // Obtiene la cadena de conexión
                 var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-                // Usa SQL Server como motor de base de datos
-                optionsBuilder.UseSqlServer(connectionString);
+                // --- ESTA ES LA LÍNEA QUE CAMBIAMOS ---
+                optionsBuilder.UseSqlite(connectionString);
+                // ------------------------------------
             }
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)

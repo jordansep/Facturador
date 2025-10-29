@@ -7,7 +7,7 @@ namespace Facturador.Models.Clases
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id {get; private set; }
+        public int Id { get; private set; }
         [Required]
         public string CuitCuil { get; private set; }
         [Required]
@@ -15,32 +15,24 @@ namespace Facturador.Models.Clases
         public string Domicilio { get; private set; }
         public List<Factura> Facturas { get; private set; }
 
-        public Cliente(string CuitCuil, string RazonSocial, string Domicilio)
+        // Constructor para EF Core
+        private Cliente() { }
+
+        // Constructor para crear un nuevo cliente
+        public Cliente(string cuitCuil, string razonSocial, string domicilio)
         {
-            this.CuitCuil = CuitCuil;
-            this.RazonSocial = RazonSocial;
-            this.Domicilio = Domicilio;
+            CuitCuil = cuitCuil;
+            RazonSocial = razonSocial;
+            Domicilio = domicilio;
             Facturas = new List<Factura>();
         }
-        public void BuscarCliente()
+
+        // Método para actualizar un cliente (lo usaremos en Modificar)
+        public void ActualizarDatos(string nuevoCuit, string nuevaRazonSocial, string nuevoDomicilio)
         {
-
-        }
-        public void RegistrarCliente()
-        {
-
-        }
-        public void BorrarCliente() 
-        { 
-
-        }
-        public void MostrarListaDeClientes() 
-        {
-
-        }
-        public void ModificarCliente()
-        {
-
+            CuitCuil = nuevoCuit;
+            RazonSocial = nuevaRazonSocial;
+            Domicilio = nuevoDomicilio;
         }
     }
 }

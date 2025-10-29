@@ -1,7 +1,5 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-
 
 namespace Facturador.Models.Clases
 {
@@ -15,14 +13,19 @@ namespace Facturador.Models.Clases
         [Required]
         public float Cantidad { get; set; }
         [Required]
-        public float PrecioUnitario { get; set; }
+        public float PrecioUnitario { get; set; } // Usamos este, como en tu migración
         public Factura Factura { get; set; }
         public int FacturaId { get; set; }
-        // Hacer Constructor
-        public static void AñadirItem()
+
+        // Constructor vacío (buena práctica para EF)
+        public Item() { }
+
+        // Constructor para crear un item
+        public Item(string descripcion, float cantidad, float precioUnitario)
         {
-
+            Descripcion = descripcion;
+            Cantidad = cantidad;
+            PrecioUnitario = precioUnitario;
         }
-
     }
 }
