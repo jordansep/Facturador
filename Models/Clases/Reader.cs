@@ -40,7 +40,7 @@ namespace Parcial3.Modules
             int result;
             while (true)
             {
-                // Es una buena práctica mostrarle el rango al usuario en el prompt.
+              
                 Presentador.WriteLine($"{prompt} (entre {min} y {max}): ");
 
                 // --- Validación 1: ¿Es un número válido? ---

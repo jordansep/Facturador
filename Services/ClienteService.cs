@@ -1,6 +1,6 @@
 ﻿using Facturador.Interfaces;
 using Facturador.Models.Clases;
-using Facturador.Models.Menus; // Para usar Presentador.WriteLine
+using Facturador.Models.Menus; 
 using Facturador.Server;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,7 +22,7 @@ namespace Facturador.Services
 
         public Cliente BuscarClientePorRazonSocial(string razonSocial)
         {
-            // Usamos ToUpper() para que la búsqueda no distinga mayúsculas/minúsculas
+            
             return _context.Clientes.FirstOrDefault(c => c.RazonSocial.ToUpper() == razonSocial.ToUpper());
         }
 
@@ -35,7 +35,6 @@ namespace Facturador.Services
         {
             try
             {
-                // Verificamos si ya existe un cliente con ese CUIT o Razón Social
                 var clienteExistente = _context.Clientes.FirstOrDefault(c => c.CuitCuil == cliente.CuitCuil || c.RazonSocial.ToUpper() == cliente.RazonSocial.ToUpper());
 
                 if (clienteExistente != null)
@@ -58,7 +57,6 @@ namespace Facturador.Services
         {
             try
             {
-                // Le decimos a EF que este objeto ha sido modificado
                 _context.Entry(cliente).State = EntityState.Modified;
                 _context.SaveChanges();
                 Presentador.WriteLine("¡Cliente modificado con éxito!");

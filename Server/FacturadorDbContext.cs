@@ -25,7 +25,7 @@ namespace Facturador.Server
                 var connectionString = configuration.GetConnectionString("DefaultConnection");
 
                 // --- ESTA ES LA LÍNEA QUE CAMBIAMOS ---
-                optionsBuilder.UseSqlite(connectionString);
+                optionsBuilder.UseSqlServer(connectionString);
                 // ------------------------------------
             }
         }

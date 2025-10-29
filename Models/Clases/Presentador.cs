@@ -7,29 +7,28 @@ namespace Facturador.Models.Menus
 {
     public class Presentador
     {
-        // Guardamos los servicios como variables estáticas
+        
         private static ICliente _clienteService;
-        private static IFactura _facturaService; // <-- ¡TE FALTA ESTA LÍNEA!
+        private static IFactura _facturaService; 
 
         public static void WriteLine(string mensaje)
         {
             Console.WriteLine(mensaje);
         }
 
-        // Método para pausar y esperar que el usuario presione una tecla
         public static void Pausa()
         {
             WriteLine("\nPresione cualquier tecla para continuar...");
             Console.ReadKey();
         }
 
-        // Este es el nuevo método de inicio
+        
         public static void IniciarMenu(ICliente clienteService, IFactura facturaService)
         {
             _clienteService = clienteService;
             _facturaService = facturaService;
 
-            // Ajustamos la cultura para que lea bien los números con coma (,)
+            
             CultureInfo.CurrentCulture = new CultureInfo("es-ES");
 
             MenuPrincipal();
@@ -337,7 +336,7 @@ namespace Facturador.Models.Menus
                     (item.Cantidad * item.PrecioUnitario)));
             }
             WriteLine("----------------------------------------------------------------------");
-            WriteLine($"IMPORTE TOTAL: {nuevaFactura.ImporteTotal:C2}"); // :C2 formatea como Moneda
+            WriteLine($"IMPORTE TOTAL: {nuevaFactura.ImporteTotal:C2}"); 
             WriteLine("----------------------------------------------------------------------");
 
 

@@ -18,7 +18,7 @@ namespace Facturador.Models.Clases
         // Constructor para EF Core
         private Cliente() { }
 
-        // Constructor para crear un nuevo cliente
+        
         public Cliente(string cuitCuil, string razonSocial, string domicilio)
         {
             CuitCuil = cuitCuil;
@@ -27,7 +27,7 @@ namespace Facturador.Models.Clases
             Facturas = new List<Factura>();
         }
 
-        // Método para actualizar un cliente (lo usaremos en Modificar)
+        
         public void ActualizarDatos(string nuevoCuit, string nuevaRazonSocial, string nuevoDomicilio)
         {
             CuitCuil = nuevoCuit;

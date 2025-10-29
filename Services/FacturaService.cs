@@ -31,19 +31,17 @@ namespace Facturador.Services
             }
         }
 
-        // Lo usaremos en el próximo paso (Consultar Factura)
         public Factura BuscarFactura(string numero)
         {
             try
             {
-                // Buscamos la factura por su número
-                // Usamos Include para traer los datos del Cliente y los Items
+                
                 var factura = _context.Facturas
                                 .Include(f => f.Cliente)
                                 .Include(f => f.Items)
                                 .FirstOrDefault(f => f.Numero == numero);
 
-                return factura; // Devolvemos la factura encontrada (o null si no existe)
+                return factura; 
             }
             catch (Exception ex)
             {

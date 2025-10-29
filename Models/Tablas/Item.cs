@@ -13,7 +13,7 @@ namespace Facturador.Models.Clases
         [Required]
         public float Cantidad { get; set; }
         [Required]
-        public float PrecioUnitario { get; set; } // Usamos este, como en tu migración
+        public float PrecioUnitario { get; set; } 
         public Factura Factura { get; set; }
         public int FacturaId { get; set; }
 

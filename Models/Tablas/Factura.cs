@@ -21,7 +21,7 @@ namespace Facturador.Models.Clases
         public int ClienteId { get; set; }
         public List<Item> Items { get; set; }
 
-        // Constructor para inicializar la lista de Items
+       
         public Factura()
         {
             Items = new List<Item>();
